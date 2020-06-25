@@ -25,3 +25,10 @@ def album_detail(request, album_id):
         'songs': Song.objects.all()
     }
     return render(request, 'album_detail.html', context)
+
+
+def song_detail(request, song_id):
+    context = {
+        'song': Song.objects.get(id=song_id),
+    }
+    return render(request, 'song_detail.html', context)

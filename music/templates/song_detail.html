@@ -1,0 +1,16 @@
+<h1>{{song.title}}</h1>
+
+<h2>Artist</h2>
+<a> {{ song.artist }} </a>
+
+<h3>Release Date</h3>
+<a> {{ song.date_published }} </a>
+
+<h3>Part of these albums</h3>
+<ul>
+  {% for album in song.albums.all %}
+    <li>
+      <a>{{ album.name }}</a>
+    </li>
+  {% endfor %}
+</ul>
