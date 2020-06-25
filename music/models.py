@@ -14,8 +14,7 @@ class Musician(models.Model):
 class Album(models.Model):
     name = models.CharField(max_length=50)
     date_published = models.DateField()
-    artist = models.ForeignKey(Musician, on_delete=models.CASCADE, null=True)
-
+    artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -24,8 +23,8 @@ class Album(models.Model):
 class Song(models.Model):
     title = models.CharField(max_length=100)
     date_published = models.DateField()
-    artist = models.ForeignKey(Musician, on_delete=models.CASCADE, null=True)
-    albums = models.ManyToManyField(Album, blank=True)
+    artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
+    albums = models.ManyToManyField(Album, null=True)
 
     def __str__(self):
         return self.title

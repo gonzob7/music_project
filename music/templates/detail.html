@@ -1,10 +1,16 @@
-<h1>{{book.title}}</h1>
+<h1>{{musician.name}}</h1>
+
+<h2>All Albums</h2>
+
+<ul>
+  {% for album in albums %}
+    <li>
+      <a href="/album/{{ album.id }}">{{ album.name }}</a>
+    </li>
+  {% endfor %}
+</ul>
 
 
-<a"/book/{{ book.id }}">Number of pages: {{ book.num_pages }} </a>
-<br>
-<a"/book/{{ book.id }}">Publish Date: {{ book.date_published }}</a>
-<br>
-<a"/book/{{ book.id }}">Author: {{ book.author }}, (b. {{book.author.birth_date}})</a>
-<br>
-<a"/book/{{ book.id }}">Tags: {% for book_tag in book.tags.all %} {{book_tag}},{% endfor %}</a>
+<h3>Birth place</h3>
+
+<a> {{ musician.birth_city }} </a>

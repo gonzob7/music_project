@@ -1,0 +1,17 @@
+<h1>{{album.name}}</h1>
+
+<h2>Artist</h2>
+<a> {{ album.artist }} </a>
+
+<h3>Release Date</h3>
+<a> {{ album.date_published }} </a>
+
+<h3>All Songs</h3>
+
+<ul>
+  {% for song in songs %}
+    <li>
+      <a href="/song/{{ song.id }}">{{ song.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
