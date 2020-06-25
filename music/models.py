@@ -14,6 +14,9 @@ class Musician(models.Model):
 class Album(models.Model):
     name = models.CharField(max_length=50)
     date_published = models.DateField()
+    artist = models.ForeignKey(Musician, on_delete=models.CASCADE, null=True)
+
+
     def __str__(self):
         return self.name
 
